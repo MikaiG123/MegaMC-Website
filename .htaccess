@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Verwijder .html extensie uit de URL
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Redirect oude .html URL's naar nieuwe zonder extensie
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
